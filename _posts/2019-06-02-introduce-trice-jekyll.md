@@ -14,7 +14,7 @@ gh-repo: cuiyiming007/Trice-Jekyll
 
 > *Copyright 2019 [CuiYiming](https://cuiyiming007.github.io/)*
 
-[English Documentation](https://raw.githubusercontent.com/cuiyiming007/Trice-Jekyll/master/README.md) | 中文文档
+[English Documentation](https://github.com/cuiyiming007/Trice-Jekyll/blob/master/README.md) | 中文文档
 
 **Trice Jekyll** 是一个可以快速帮助你搭建一个漂亮的网站的即时可用的模板。适用于个人站点，博客或者简单的项目网站。[访问我的个人博客](https://cuiyiming007.github.io/)你可以看看你只需要几分钟就能实现的效果。
 
