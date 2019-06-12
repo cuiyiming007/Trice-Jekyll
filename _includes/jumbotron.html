@@ -1,0 +1,54 @@
+{% if page.bigimg %}
+<div id="header-big-imgs" data-num-img={% if page.bigimg.first %}{{ page.bigimg.size }}{% else %}1{% endif %}
+    {% for bigimg in page.bigimg %} {% assign imgnum = forloop.index %} {% for imginfo in bigimg %} {% if imginfo[0] %}
+    data-img-src-{{ imgnum }}="{{ imginfo[0] | prepend: site.baseurl | replace: '//', '/' }}"
+    data-img-desc-{{ imgnum }}="{{ imginfo[1] }}" {% else %}
+    data-img-src-{{ imgnum }}="{{ imginfo | prepend: site.baseurl | replace: '//', '/' }}" {% endif %} {% endfor %}
+    {% endfor %}></div>
+{% endif %}
+
+{% if page.bigimg %}
+<section >
+    <div class="jumbotron big-img" data-pattern-id="{{ page.title }}">
+    <div class="container">
+        <div id="jumbotron-meta-info">
+            <h1 style="background: #0003; width: fit-content;">{{ page.title }}</h1>
+            <span class="meta-info">
+                {% if page.subtitle %}
+                {{ page.subtitle }}
+                {% endif %}
+                {% if page.date %}
+                <span class="octicon octicon-calendar"></span> {{ page.date | date: "%Y/%m/%d" }}
+                {% endif %}
+            </span>
+        </div>
+    </div>
+</div>
+</section>
+
+{% else %}
+<section class="jumbotron geopattern" data-pattern-id="{{ page.title }}">
+    <div class="container">
+        <div id="jumbotron-meta-info">
+            <h1>{{ page.title }}</h1>
+            <span class="meta-info">
+                {% if page.subtitle %}
+                {{ page.subtitle }}
+                {% endif %}
+                {% if page.date %}
+                <span class="octicon octicon-calendar"></span> {{ page.date | date: "%Y/%m/%d" }}
+                {% endif %}
+            </span>
+        </div>
+    </div>
+</section>
+<script>
+    $(document).ready(function () {
+
+        $('.geopattern').each(function () {
+            $(this).geopattern($(this).data('pattern-id'));
+        });
+
+    });
+</script>
+{% endif %}

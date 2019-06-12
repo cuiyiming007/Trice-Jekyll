@@ -1,0 +1,107 @@
+---
+layout: default
+css: ['sidebar-post-nav.css']
+---
+{% include jumbotron.html %}
+<article class="post container" itemscope itemtype="http://schema.org/BlogPosting">
+
+    <div class="row">
+        {% if page.gh-repo %}
+        {% assign gh_split =  page.gh-repo | split:'/'  %}
+        {% assign gh_user =  gh_split[0]  %}
+        {% assign gh_repo =  gh_split[1]  %}
+
+        <div id="header-gh-btns">
+            {% if page.gh-badge.size > 0 %}
+            {% for badge in page.gh-badge %}
+            {% case badge %}
+            {% when 'star'%}
+            <iframe src="https://ghbtns.com/github-btn.html?user={{ gh_user }}&repo={{ gh_repo }}&type=star&count=true"
+                frameborder="0" scrolling="0" width="120px" height="20px"></iframe>
+            {% when 'watch'%}
+            <iframe
+                src="https://ghbtns.com/github-btn.html?user={{ gh_user }}&repo={{ gh_repo }}&type=watch&v=2&count=true"
+                frameborder="0" scrolling="0" width="120px" height="20px"></iframe>
+            {% when 'fork'%}
+            <iframe src="https://ghbtns.com/github-btn.html?user={{ gh_user }}&repo={{ gh_repo }}&type=fork&count=true"
+                frameborder="0" scrolling="0" width="120px" height="20px"></iframe>
+            {% when 'follow'%}
+            <iframe src="https://ghbtns.com/github-btn.html?user={{ gh_user }}&type=follow&count=true" frameborder="0"
+                scrolling="0" width="220px" height="20px"></iframe>
+            {% endcase %}
+            {% endfor %}
+            {% endif %}
+        </div>
+        {% endif %}
+
+        {% if page.no-post-nav %}
+        <div class="col-md-12 markdown-body">
+
+            {{ content }}
+
+            <!-- social-share -->
+            {% if page.social-share %}
+            {% include share.html %}
+            {% endif %}
+
+            <ul class="pager blog-pager" style="padding-left: 0px">
+                {% if page.previous.url %}
+                <li class="previous">
+                    <a href="{{ page.previous.url | prepend: site.baseurl | replace: '//', '/' }}" data-toggle="tooltip"
+                        data-placement="top" title="Previous Post">&larr; {{page.previous.title}}</a>
+                </li>
+                {% endif %}
+                {% if page.next.url %}
+                <li class="next">
+                    <a href="{{ page.next.url | prepend: site.baseurl | replace: '//', '/' }}" data-toggle="tooltip"
+                        data-placement="top" title="Next Post">{{page.next.title}} &rarr;</a>
+                </li>
+                {% endif %}
+            </ul>
+
+            <!-- Comments -->
+            {% if page.comments %}
+            {% include disqus-comments.html %}
+            {% include livere-comments.html %}
+            {% endif %}
+        </div>
+        {% else %}
+        <div class="col-md-8 markdown-body">
+
+            {{ content }}
+
+            <!-- social-share -->
+            {% if page.social-share %}
+            {% include share.html %}
+            {% endif %}
+
+            <ul class="pager blog-pager" style="padding-left: 0px">
+                {% if page.previous.url %}
+                <li class="previous">
+                    <a href="{{ page.previous.url | prepend: site.baseurl | replace: '//', '/' }}" data-toggle="tooltip"
+                        data-placement="top" title="Previous Post">&larr; {{page.previous.title}}</a>
+                </li>
+                {% endif %}
+                {% if page.next.url %}
+                <li class="next">
+                    <a href="{{ page.next.url | prepend: site.baseurl | replace: '//', '/' }}" data-toggle="tooltip"
+                        data-placement="top" title="Next Post">{{page.next.title}} &rarr;</a>
+                </li>
+                {% endif %}
+            </ul>
+
+            <!-- Comments -->
+            {% if page.comments %}
+            {% include disqus-comments.html %}
+            {% include livere-comments.html %}
+            {% endif %}
+        </div>
+
+        <div class="col-md-4">
+            {% include sidebar-post-nav.html %}
+        </div>
+        {% endif %}
+
+    </div>
+
+</article>
