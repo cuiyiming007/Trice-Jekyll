@@ -1,5 +1,5 @@
 GIT
-  remote: git://github.com/flori/json.git
+  remote: https://github.com/flori/json.git
   revision: 7f4cfd853f2c919d854fb95548a19980feff17e8
   branch: v1.8
   specs:
@@ -55,7 +55,7 @@ GEM
     commonmarker (0.17.13)
       ruby-enum (~> 0.5)
     concurrent-ruby (1.1.5)
-    crass (1.0.5)
+    crass (1.0.6)
     dnsruby (1.61.2)
       addressable (~> 2.5)
     em-websocket (0.5.1)
@@ -247,7 +247,7 @@ GEM
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
       ruby_dep (~> 1.2)
-    loofah (2.3.1)
+    loofah (2.18.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
     mail (2.7.1)
@@ -255,17 +255,17 @@ GEM
     mercenary (0.3.6)
     middleware (0.1.0)
     mini_mime (1.0.1)
-    mini_portile2 (2.6.1)
+    mini_portile2 (2.8.0)
     minima (2.5.0)
       jekyll (~> 3.5)
       jekyll-feed (~> 0.9)
       jekyll-seo-tag (~> 2.1)
     minitest (5.11.3)
     multipart-post (2.1.1)
-    nokogiri (1.12.3)
-      mini_portile2 (~> 2.6.1)
+    nokogiri (1.13.6)
+      mini_portile2 (~> 2.8.0)
       racc (~> 1.4)
-    nokogiri (1.12.3-x64-mingw32)
+    nokogiri (1.13.6-x64-mingw32)
       racc (~> 1.4)
     octokit (4.14.0)
       sawyer (~> 0.8.0, >= 0.5.3)
@@ -277,7 +277,7 @@ GEM
       thor
       thread_safe
     public_suffix (3.1.1)
-    racc (1.5.2)
+    racc (1.6.0)
     rack (1.6.13)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -298,8 +298,8 @@ GEM
       activesupport (>= 4.2.0, < 5.0)
       nokogiri (~> 1.6)
       rails-deprecated_sanitizer (>= 1.0.1)
-    rails-html-sanitizer (1.0.4)
-      loofah (~> 2.2, >= 2.2.2)
+    rails-html-sanitizer (1.4.3)
+      loofah (~> 2.3)
     railties (4.2.11.1)
       actionpack (= 4.2.11.1)
       activesupport (= 4.2.11.1)
